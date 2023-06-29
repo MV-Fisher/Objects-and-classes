@@ -19,8 +19,18 @@ public class Book {
   public void setPublicationYear(int year) {
       this.publicationYear = year;
   }
-    public String toString() {
-        return "Книга " + this.tileBook + " опубликована в " + this.publicationYear +
+  public String toString() {
+      return "Книга " + this.tileBook + " опубликована в " + this.publicationYear +
                 " году. " + this.author.toString();
+  }
+  public boolean equals(Book book) {
+      return this.tileBook.equals(book.tileBook) && this.author.equals(book.author)
+              && this.publicationYear == book.publicationYear;
+    }
+    public int hashCode() {
+        int result = tileBook.hashCode();
+        result = 31 * result + author.hashCode();
+        result = 31 * result + publicationYear;
+        return result;
     }
 }

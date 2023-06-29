@@ -14,4 +14,12 @@ public class Author {
     public String toString(){
         return "Автор: " +  this.firstName + " " + this.lastName ;
     }
+    public boolean equals(Author author){
+        return this.firstName.equals(author.firstName) && this.lastName.equals(author.lastName);
+    }
+    public int hashCode() {
+        int result = firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        return result;
+    }
 }
