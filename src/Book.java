@@ -23,9 +23,24 @@ public class Book {
       return "Книга " + this.tileBook + " опубликована в " + this.publicationYear +
                 " году. " + this.author.toString();
   }
-  public boolean equals(Book book) {
-      return this.tileBook.equals(book.tileBook) && this.author.equals(book.author)
-              && this.publicationYear == book.publicationYear;
+    public boolean equals(Object book) {
+        if (book==null){
+            return false;
+        }
+        if (this==book){
+            return true;
+        }
+        if (this.getClass() != book.getClass()){
+            return false;
+        }
+        Book book1 = (Book) book;
+        if (publicationYear != book1.getPublicationYear()){
+            return false;
+        }
+        if (!tileBook.equals(book1.tileBook)){
+            return false;
+        }
+        return author.equals(book1.author);
     }
     public int hashCode() {
         int result = tileBook.hashCode();

@@ -14,8 +14,19 @@ public class Author {
     public String toString(){
         return "Автор: " +  this.firstName + " " + this.lastName ;
     }
-    public boolean equals(Author author){
-        return this.firstName.equals(author.firstName) && this.lastName.equals(author.lastName);
+    public boolean equals(Object author){
+        if (author==null){
+            return false;
+        }
+        if (this==author){
+            return true;
+        }
+        if (this.getClass() != author.getClass()){
+            return false;
+        }
+        Author author1 = (Author) author;
+        return firstName.equals(author1.getFirstName()) &&
+             lastName.equals(author1.getLastName());
     }
     public int hashCode() {
         int result = firstName.hashCode();

@@ -6,8 +6,6 @@ public class Main {
                 warAndPeace.getPublicationYear() + " году. Автор : " +
                 warAndPeace.getAuthor().getFirstName() +  " " +
                 warAndPeace.getAuthor().getLastName());
-        warAndPeace.setPublicationYear(1860);
-        System.out.println(warAndPeace.getPublicationYear());
         Author hayley = new Author("Arthur", "Hayley") ;
         Book airport = new Book("Airport", hayley, 1992) ;
         Author flash = new Author("Bill", "Flash") ;
@@ -26,6 +24,9 @@ public class Main {
         Book crime = new Book("Crime and punishment" , dostoevsky , 1993);
         Author kaverin = new Author("Benjamin" , "Kaverin");
         Book captain = new Book("Two captains" , kaverin , 1973);
+        System.out.println(warAndPeace);
+        warAndPeace.setPublicationYear(1860);
+        System.out.println("Книга преиздана в " + warAndPeace.getPublicationYear() + " году.");
         System.out.println(airport);
         System.out.println(theBatman);
         System.out.println(deadlyWeapons);
@@ -42,4 +43,4 @@ public class Main {
         System.out.println(captain.hashCode());
     }
 }
-// Домашнее задание Методы объектов считаю выполненным.
+// Домашнее задание Методы объектов с првкой метода equals.
