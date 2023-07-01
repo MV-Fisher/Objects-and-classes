@@ -34,13 +34,8 @@ public class Book {
             return false;
         }
         Book book1 = (Book) book;
-        if (publicationYear != book1.getPublicationYear()){
-            return false;
-        }
-        if (!tileBook.equals(book1.tileBook)){
-            return false;
-        }
-        return author.equals(book1.author);
+        return publicationYear == book1.publicationYear &&
+                tileBook.equals(book1.tileBook) && author.equals(book1.author);
     }
     public int hashCode() {
         int result = tileBook.hashCode();
